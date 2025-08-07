@@ -7,8 +7,13 @@ const VariantSchema = new mongoose.Schema(
       ref: "Product",
       required: true,
     },
+
+    variantIndex: { type: Number, default: 0 }, // for sorting the variants in the frontend
+
+    // product info------------------
     size: String,
     color: String,
+    variantDescription: String,
     sku: {
       type: String,
       required: true,
@@ -24,13 +29,12 @@ const VariantSchema = new mongoose.Schema(
       required: true,
     },
     images: [String],
-    thumbnail: { type: String, required: false },
   },
   { timestamps: true }
 );
 
 // Prevent same size+color combo for same product
-VariantSchema.index({ productId: 1, size: 1, color: 1 }, { unique: true });
+// VariantSchema.index({ productId: 1, size: 1, color: 1 }, { unique: true });
 
 const Variant = mongoose.model("Variant", VariantSchema);
 export default Variant;
