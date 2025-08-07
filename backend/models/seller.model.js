@@ -51,13 +51,6 @@ const sellerModel = new mongoose.Schema(
       type: Boolean,
       default: false, // admin must verify sellers manually
     },
-
-    otp: {
-      type: String,
-    },
-    otpExpiry: {
-      type: String,
-    },
   },
 
   { timestamps: true }
