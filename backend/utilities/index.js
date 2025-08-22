@@ -11,6 +11,7 @@ import { tokenGenerator } from "./tokenGenerator.utility.js";
 // socketConnection;
 
 // import { cloudinary } from "./cloudinary.utility.js";
+import { generateSKU } from "./skuGenerator.js";
 
 export {
   asyncHandler,
@@ -18,6 +19,7 @@ export {
   tokenGenerator,
   errorHandler,
   responseHandler,
+  generateSKU,
   // socketConnection,
   // getIO,
   // getSocketId,
