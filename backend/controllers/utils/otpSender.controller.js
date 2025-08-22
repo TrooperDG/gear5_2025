@@ -1,11 +1,11 @@
-import OtpCache from "../models/temp/otpCache.model.js";
+import OtpCache from "../../models/temp/otpCache.model.js";
 import bcrypt from "bcryptjs";
 import {
   asyncHandler,
   responseHandler,
   errorHandler,
   sendEmail,
-} from "../utilities/index.js";
+} from "../../utilities/index.js";
 
 const sendOtp = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
