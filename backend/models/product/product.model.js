@@ -4,19 +4,20 @@ const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    trim: true,
   },
 
-  thumbnail: { type: String, required: false },
-  description: String,
-  brand: String,
-  tags: [String],
+  thumbnail: { type: String, default: "" },
+  description: { type: String, default: "" },
+  brand: { type: String, default: "" },
+  tags: { type: [String], default: [] },
 
-  category: {
+  categoryId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category",
     required: true,
   },
-  seller: {
+  sellerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Seller",
     required: true,

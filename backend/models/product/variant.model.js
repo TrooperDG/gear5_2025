@@ -9,11 +9,12 @@ const VariantSchema = new mongoose.Schema(
     },
 
     variantIndex: { type: Number, default: 0 }, // for sorting the variants in the frontend
+    variantName: { type: String, required: true },
 
     // product info------------------
-    size: String,
-    color: String,
-    variantDescription: String,
+    size: { type: String, default: "" },
+    color: { type: String, default: "" },
+    description: { type: String, default: "" },
     sku: {
       type: String,
       required: true,
